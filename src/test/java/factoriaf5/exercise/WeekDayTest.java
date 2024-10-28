@@ -40,6 +40,27 @@ public class WeekDayTest {
         assertEquals(weekDay.getSizeList(), 7);
     }
 
+    @Test
+    @DisplayName("Test testDeleteDay()")
+    void testDeleteDay() {
+        WeekDay weekDay = new WeekDay();
+        assertEquals(weekDay.getSizeList(), 7);
+    }
+
+    @Test
+    @DisplayName("Test getSpecificDayByName(String day)")
+    void testGetSpecificDayByName() {
+        WeekDay weekDay = new WeekDay();
+        assertEquals(weekDay.getSpecificDayByName("Tuesday"), "Tuesday");
+    }
+
+    @Test
+    @DisplayName("Test int index")
+    void testgetSpecificDayByIndex() {
+        WeekDay weekDay = new WeekDay();
+        assertEquals(weekDay.getSpecificDayByIndex(1), "Tuesday");
+    }
+
 //     @Test
 //     void testSetDaysOfWeek() {
 

@@ -49,4 +49,17 @@ public class WeekDay {
     public void setDays(List<String> days) {
         this.days = days;
     }
+
+    public void deleteDay(int dayNum) {
+        days.remove(dayNum);
+    }
+
+    public String getSpecificDayByName(String day) {
+        return days.get(days.indexOf(day));
+    }
+
+    public String getSpecificDayByIndex(int index) {
+        return days.get(index);
+    }
+
 }
