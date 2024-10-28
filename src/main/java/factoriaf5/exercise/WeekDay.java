@@ -1,6 +1,7 @@
 package factoriaf5.exercise;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 public class WeekDay {
 
@@ -19,24 +20,7 @@ public class WeekDay {
         days.add("Friday");
         days.add("Saturday");
         days.add("Sunday");
-        
-            // DaysOfWeek.
-
-        // String[] daysOfWeek = 
-        // {
-        //     "Monday", 
-        //     "Tuesday", 
-        //     "Wednesday", 
-        //     "Thursday", 
-        //     "Friday", 
-        //     "Saturday", 
-        //     "Sunday", 
-        // };
     }
-
-    // public void render() {
-    //     System.out.println(days);
-    // }
 
     public List<String> getDays() {
         return days;
@@ -61,5 +45,19 @@ public class WeekDay {
     public String getSpecificDayByIndex(int index) {
         return days.get(index);
     }
+
+    public boolean dayExist(String day) {
+        return days.contains(day);
+        
+    }
+
+    public void sortByAlphabet() {
+        Collections.sort(days);
+    }
+
+    public void emptyList() {
+        days.clear();
+    }
+
 
 }

@@ -6,5 +6,7 @@ public final class App {
 
         WeekDay weekDay = new WeekDay();
         System.out.println(weekDay.getDays());
+        weekDay.sortByAlphabet();
+        System.out.println(weekDay.getDays());
     }
 }

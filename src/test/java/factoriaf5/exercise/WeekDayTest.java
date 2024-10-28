@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 public class WeekDayTest {
 
     private WeekDay weekDay;
+    
 
     // @BeforeEach
     // public void setUp() {
@@ -55,29 +56,41 @@ public class WeekDayTest {
     }
 
     @Test
-    @DisplayName("Test int index")
+    @DisplayName("Test getSpecificDayByIndex(int index)")
     void testgetSpecificDayByIndex() {
         WeekDay weekDay = new WeekDay();
         assertEquals(weekDay.getSpecificDayByIndex(1), "Tuesday");
     }
 
-//     @Test
-//     void testSetDaysOfWeek() {
+    @Test
+    @DisplayName("Test dayExist(String day)") 
+    void testDayExist() {
+        WeekDay weekDay = new WeekDay();
+        assertEquals(weekDay.dayExist("Wednesday"), true);
+    }
 
-//     }
-//         @Test
-//     @DisplayName("Devuelve Fizz si el número es divisible por 5")
-//     void testIfdivisibleBy5_ReturnBuzz() {
-//         // test Object type Fizzbuzz Inisialisation
-        
-//         //Given
-//         int numb = 5;
+    @Test
+    @DisplayName("Test emptyList()") 
+    void testEmptyList() {
+        WeekDay weekDay = new WeekDay();
+        weekDay.emptyList();
+        assertEquals(weekDay.getSizeList(), 0);
+    }
 
-//         //When
-//         String result = fizzbuzz.checkNumber(numb);
+    @Test
+    @DisplayName("Test sortedByAlphabet()")
+    void testSortedByAlphabet() {
+       
+        WeekDay weekDay = new WeekDay();
 
-//         //Then
-//         assertThat(fizzbuzz, instanceOf(FizzBuzz.class));
-//         assertThat(result,is("Buzz"));
-// }
+        ArrayList<String> daysExpected = new ArrayList<>(Arrays.asList("Friday", "Monday", "Saturday", "Sunday", "Thursday", "Tuesday", "Wednesday"));
+
+        //When
+        weekDay.sortByAlphabet();
+        ArrayList<String> result = (ArrayList<String>) weekDay.getDays();
+
+        //Then
+        assertEquals(result, daysExpected);
+    }
+
 }
